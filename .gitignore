@@ -169,7 +169,5 @@ cython_debug/
 #.idea/
 
 
-node_modules/
-static/css/output.css
 poetry.lock
 .idea/
