@@ -33,3 +33,12 @@ repos:
       - id: poetry-lock
       - id: poetry-export
       - id: poetry-install
+
+  - repo: local
+    hooks:
+        - id: test
+          name: test
+          entry: make test
+          always_run: true
+          pass_filenames: false
+          language: system
