@@ -19,7 +19,6 @@ psycopg = "^3.1.18"
 pre-commit = "^3.7.0"
 
 [tool.poetry.group.test.dependencies]
-model-bakery = "^1.18.0"
 coverage = "^7.5.0"
 
 [tool.isort]
