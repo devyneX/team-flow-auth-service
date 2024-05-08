@@ -3,7 +3,7 @@ import uuid
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-from src.accounts.manager import UserManager
+from src.accounts.managers import UserManager
 
 
 class User(AbstractUser):
