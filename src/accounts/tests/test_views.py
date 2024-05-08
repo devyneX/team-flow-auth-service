@@ -60,3 +60,20 @@ class TestRegisterView(APITestCase):
         self.assertEqual(response.status_code, 400)
         self.assertIn('username', response.data)
         self.assertEqual(response.data['username'][0], 'A user with that username already exists.')
+
+    def test_authenticated_user(self):
+        user = User.objects.create_user(username='testuser', email='testuser@test.com', password='testpassword')
+
+        jwt = self.client.post('/api/token/', data={'username': user.username, 'password': 'testpassword'})
+
+        data = {
+            'username': 'testuser1',
+            'email': 'testuser1@test.com',
+            'password': 'testpassword',
+            'confirm_password': 'testpassword'
+        }
+
+        response = self.client.post('/api/register/', data=data, HTTP_AUTHORIZATION=f'Bearer {jwt.data["access"]}')
+
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.data['error'], 'Already registered.')
