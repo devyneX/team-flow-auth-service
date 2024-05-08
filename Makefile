@@ -38,5 +38,17 @@ shell:
 superuser:
 	poetry run python -m src.manage createsuperuser
 
+.PHONY: test
+test:
+	poetry run coverage run -m src.manage test
+
+.PHONY: test-coverage
+test-coverage: test
+	poetry run coverage report
+
+.PHONY: test-cover-html
+test-cover-html: test
+	poetry run coverage html
+
 .PHONY: update
 update: install migrate install-pre-commit ;
