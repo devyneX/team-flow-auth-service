@@ -7,7 +7,7 @@ from src.accounts.managers import UserManager
 
 
 class User(AbstractUser):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)  # noqa
+    uuid = models.UUIDField(unique=True, default=uuid.uuid4, editable=False)
     email = models.EmailField(unique=True)
     is_email_verified = models.BooleanField(default=False)
     objects = UserManager()
