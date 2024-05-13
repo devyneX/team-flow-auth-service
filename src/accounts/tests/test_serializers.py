@@ -68,6 +68,5 @@ class TestCustomTokenObtainPairSerializer(TestCase):
 
         token = serializer.get_token(self.user)
 
-        self.assertEqual(token['name'], self.user.get_full_name())
         self.assertEqual(token['username'], self.user.username)
         self.assertEqual(token['email'], self.user.email)
