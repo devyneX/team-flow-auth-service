@@ -1,10 +1,11 @@
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-1_zbn10iexkuj&1sxwe5h_k14un#3y0)tx5&2e1z8*jzq$kjn%'
+SECRET_KEY = 'django-insecure-zg19phrm9ozxs2z)gg=!p5h&o#=v=0$c64(bz9@!&=p9a&ghtq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -72,8 +73,8 @@ DATABASES = {
         'NAME': 'tf-auth-dev-db',
         'USER': 'tf-dev',
         'PASSWORD': 'tf-dev',
-        'HOST': 'db',
-        'PORT': '5432',
+        'HOST': 'localhost',
+        'PORT': '8001',
         'ATOMIC_REQUESTS': True,
         'CONN_MAX_AGE': 0
     }
