@@ -1,11 +1,8 @@
 from rest_framework import status
-from rest_framework.generics import GenericAPIView
-from rest_framework.mixins import ListModelMixin
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from src.accounts.models import User
-from src.user_api.serializers.user_serializers import UserSerializer, UserAPIListSerializer
+from src.user_api.serializers.user_serializers import UserAPIListSerializer
 
 
 class GetUsersByIDs(APIView):

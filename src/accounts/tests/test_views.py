@@ -18,6 +18,9 @@ class TestRegisterView(APITestCase):
         self.assertIn('access', response.data)
         self.assertIn('refresh', response.data)
 
+        user = User.objects.get(username='testuser')
+        self.assertTrue(user.check_password('testpassword'))
+
     def test_post_invalid_data(self):
         data = {
             'username': 'testuser',
