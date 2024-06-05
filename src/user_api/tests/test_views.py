@@ -11,7 +11,7 @@ from src.accounts.models import User
 class TestGetUserByIDsView(APITestCase):
 
     def setUp(self):
-        self.url = reverse('user_api:users')
+        self.url = reverse('user_api:get_users_by_ids')
 
         user1 = baker.make(User)
         user2 = baker.make(User)
